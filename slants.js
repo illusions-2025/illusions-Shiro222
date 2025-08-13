@@ -40,11 +40,13 @@ function setup() {
 function drawCircles(stillColour){
     let offset = 50;
     let lineWidth = width - offset*2;
-    let circleWidth = lineWidth/16;
-    let x = offset + circleWidth/2;
-    let y = offset;
+    let diameter = lineWidth/16;
+    let x = offset + diameter/2;
+    let y = offset + diameter/2;
     for (let i = 0; i < 16; i++){
-        ellipse(circleWidth*i+offset, y, circleWidth, circleWidth);
+        for(let j = 0; j < 6; j ++){
+        ellipse(diameter*i+offset, diameter*j+offset, diameter, diameter);
+        }
     }
 }
 
