@@ -38,22 +38,28 @@ function setup() {
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawCircles(stillColour){
-    let xOffset = 50;
-    let yOffset = 100;
-    let lineWidth = width - xOffset*2;
-    let diameter = lineWidth/16;
-    for (let i = 0; i < 16; i++){
-        for(let j = 0; j < 6; j ++){
-        fill(255);
-        stroke(255);
-        ellipse(diameter*(i+1)+xOffset, j*yOffset + diameter, diameter, diameter);
+    let x = 50;
+    let y = 50;
+    colour = stillColour%2;
+    for (i = 0;i<6;i++){
+        for (j = 0;j<16;j++){
+            if(!stillColour){
+                colour = j%2;
+            }
+            fill(255*colour);
+            stroke(255*colour);
+            ellipse(x,y,60,60);
+            x += 60;
         }
+        x=50;
+        y+=100;
     }
 }
 
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawLines(stillColour){
+
 
 }
 //this function is called once every 60 seconds unless
