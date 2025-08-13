@@ -44,7 +44,9 @@ function drawCircles(stillColour){
     let diameter = lineWidth/16;
     for (let i = 0; i < 16; i++){
         for(let j = 0; j < 6; j ++){
-        ellipse(diameter*i+xOffset, j*yOffset + diameter, diameter, diameter);
+        fill(255);
+        stroke(255);
+        ellipse(diameter*(i+1)+xOffset, j*yOffset + diameter, diameter, diameter);
         }
     }
 }
