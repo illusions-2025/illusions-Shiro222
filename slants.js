@@ -59,7 +59,24 @@ function drawCircles(stillColour){
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawLines(stillColour){
-
+    let x=50;
+    let y=50;
+    colour = stillColour%2;
+    for (i = 0;i<6;i++){
+        for (j = 0;j<15;j++){
+            fill(255*colour);
+            stroke(255*colour);
+            rect(x+30,y+27,25,6)
+            if (!stillColour)
+                colour = (colour+1)%2;
+            fill(255*colour);
+            stroke(255*colour);
+            rect(x+30,y-27,25,6);
+            x += 60;
+        }
+        x=50;
+        y+=100;
+    }
 
 }
 //this function is called once every 60 seconds unless
