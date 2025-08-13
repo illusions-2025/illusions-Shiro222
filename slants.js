@@ -38,14 +38,13 @@ function setup() {
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawCircles(stillColour){
-    let offset = 50;
-    let lineWidth = width - offset*2;
+    let xOffset = 50;
+    let yOffset = 100;
+    let lineWidth = width - xOffset*2;
     let diameter = lineWidth/16;
-    let x = offset + diameter/2;
-    let y = offset + diameter/2;
     for (let i = 0; i < 16; i++){
         for(let j = 0; j < 6; j ++){
-        ellipse(diameter*i+offset, diameter*j+offset, diameter, diameter);
+        ellipse(diameter*i+xOffset, j*yOffset + diameter, diameter, diameter);
         }
     }
 }
